@@ -1,12 +1,11 @@
 # PiOSLiteUSBCreator
 
-This script prepares pi OS Lite installer on a usb  
+This script prepares pi OS Lite installer on a microSD   
 
 **Pre-requisites**
 
 1. This script
 2. A Raspberry Pi installer from  https://www.raspberrypi.org/software/operating-systems/ for the following:
-
 
 * Raspberry Pi OS Lite
 
