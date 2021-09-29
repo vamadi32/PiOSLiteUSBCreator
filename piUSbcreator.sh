@@ -31,7 +31,7 @@ if [[ -f $imageLoc ]]; then
         echo "User chose no"
         exit 0
     else
-        echo "wrong choice. Please chose lower case y or nn"
+        echo "wrong choice. Please enter y or n"
         exit 1
     fi
 else
