@@ -1,57 +1,31 @@
-This script prepares macOS installer disk images for use with virtualization software like VMware Fusion or Parallels. 
+# PiOSLiteUSBCreator
+
+This script prepares pi OS Lite installer on a usb  
 
 **Pre-requisites**
 
 1. This script
-2. An installer from Apple's Mac App Store for one of the following versions of macOS:
+2. A Raspberry Pi installer from  https://www.raspberrypi.org/software/operating-systems/ for the following:
 
-* 10.12.x
-* 10.13.x
-* 10.14.x
-* 10.15.x
+
+* Raspberry Pi OS Lite
 
 
 **Running the script**
 
-Run the `create_macos_vm_install_dmg.sh` script with two arguments: the path to an "Install macOS.app" and an output directory. 
-
-
-Example usage: 
-
-If you have a macOS Mojave 10.14.x installer available, run this command:
-
-`sudo /path/to/create_macos_vm_install_dmg.sh "/Applications/Install macOS Mojave.app" /path/to/output_directory`
-
-This should produce a disk image file at the specified output directory named something similar to  `macOS_[OS Version Number Here]_installer.dmg`.
+Place the "2021-05-07-raspios-buster-armhf-lite.img" image in the same directory 
+as the `piUSbcreator.sh`, connect a microSD card and then run `piUSbcreator.sh` 
 
 
 What the script does:
 
-1. Creates an empty read-write disk image file.
+1. Prompts for the disk identifier Number eg /dev/diskN where N is the number
 
-2. Uses the macOS installer's `createinstallmedia` tool to erase the disk image, copy the installer files and set up the disk image to be bootable.
-
-3. If desired, a second disk image in `.iso` format can be generated. This should produce a disk image file at the specified output directory named something similar to  `macOS_[OS Version Number Here]_installer.iso`.
-
-Once you have the disk image file created, you can choose it as an install disk image in VMware Fusion or Parallels when creating macOS virtual machines.
-
-This script has been tested with the following OS installers from the Mac App Store:
-
-* macOS 10.12.6
-* macOS 10.13.6
-* macOS 10.14.6
-* macOS 10.15.1
-
+2. Uses the `dd` command  to flash the microSD , copy the image files and set up the microSD  to be bootable.
 
 
 
 **NOTE**: 
 
-An earlier script for preparing disk images for macOS virtual machines is available in the `previous_version` directory. This script supports building installers for the following versions of Mac OS X, OS X and macOS:
+Please make sure you check that the disk identifier number is correct to avoid unknowing WIPING out your partition
 
-* 10.7.x
-* 10.8.x
-* 10.9.x
-* 10.10.x
-* 10.11.x
-* 10.12.x
