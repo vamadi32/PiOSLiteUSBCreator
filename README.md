@@ -27,4 +27,5 @@ What the script does:
 **NOTE**: 
 
 Please make sure you check that the disk identifier number is correct to avoid unknowing WIPING out your partition
+![status](https://github.com/vamadi32/PiOSLiteUSBCreator/badge.svg)
 
